@@ -14,7 +14,7 @@ export class HomeComponent {
   show: boolean = false
 
   constructor(
-    private fb: FormBuilder,
+    private fb: FormBuilder
   ) {
     this.form = this.fb.group({
       text: [null, Validators.required],
