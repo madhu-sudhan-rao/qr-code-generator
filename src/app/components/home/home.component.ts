@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SafeUrl } from '@angular/platform-browser';
-import { Router } from '@angular/router';
-
-import QrCreator from 'qr-creator';
-
 
 @Component({
   selector: 'app-home',
