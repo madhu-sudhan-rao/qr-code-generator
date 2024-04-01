@@ -1,0 +1,33 @@
+<div class="qr-page-container">
+   <div class="card">
+        <header>
+          <span>QR Generator</span>
+        </header>
+        <main>
+          <form [formGroup]="form">
+            <div>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-save cursor-pointer" (click)="pasteFromClipboard()"></i>
+                        <input class="qr-input" type="text" pInputText formControlName="text" />
+                </span>
+            </div>
+            <div class="">
+              <p-button (onClick)="onSubmit()" [disabled]="form.invalid" icon="pi pi-qrcode"></p-button>
+            </div>
+          </form>
+          <section class="qr-section" *ngIf="show">
+            <div class="qr-code">
+              <qrcode
+                [qrdata]="text"
+                [width]="256"
+                [errorCorrectionLevel]="'M'"
+                (qrCodeURL)="getURL($event)"
+              ></qrcode>
+            </div>
+            <div class="download">
+              <a [href]="qrCodeDownloadLink" download="qrcode">Download</a>
+            </div>
+          </section>
+        </main>
+   </div>
+</div>
